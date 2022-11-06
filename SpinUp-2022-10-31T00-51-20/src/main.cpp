@@ -22,10 +22,30 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   gui scr;
-  gui::thatthingyoupress button(1,1, "hi");
-
+  gui::thatthingyoupress button(5,5);
+  gui::thatthingyoupress butt2(75,5);
+int t =0;
+bool s=false;
+  while(true) {
+    
   if(button.pressed()) {
-    scr.clrscrn();
-    gui::thatthingyoupress but(1,1, "bye");
+    
+    while (button.pressed()) {
+    wait(10,msec);
+    }
+    t=t+1;
+    if (t>1) {
+      t=0;
+    }
+  }
+  
+  
+  if (t == 0){
+    
+    button.poff();
+  }
+  if (t==1) {
+    button.p();
+  }
   }
 }
